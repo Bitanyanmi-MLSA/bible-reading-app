@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f3eb">
+    <meta name="description" content="Turn Bible references into complete, readable passages.">
+    <title>Reading Room — Scripture, in full</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Reading Room home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span>READING ROOM</span>
+      </a>
+      <span class="header-note">A quiet place for the Word</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span> SCRIPTURE, WITHOUT THE SEARCH</div>
+        <h1 id="page-title">A verse is a doorway.<br><em>Step into the whole reading.</em></h1>
+        <p class="intro-copy">Enter a Bible reference and find the complete passage, ready to read, share, or reflect on.</p>
+      </section>
+
+      <section class="search-panel" aria-label="Find a Bible reading">
+        <form id="reading-form">
+          <label for="references">YOUR PASSAGE</label>
+          <textarea id="references" name="references" rows="2" maxlength="400" placeholder="For example: John 3:16-18" required></textarea>
+          <div class="form-details">
+            <p class="helper-text">Enter a reference such as <span>Psalm 23</span>. Add multiple passages on separate lines or with semicolons.</p>
+            <label class="translation-picker" for="translation">
+              <span>TRANSLATION</span>
+              <select id="translation" name="translation">
+                <option value="web">World English Bible</option>
+                <option value="kjv">King James Version</option>
+              </select>
+            </label>
+          </div>
+          <button class="submit-button" type="submit">
+            <span>Open the reading</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+        </form>
+
+        <div class="examples" aria-label="Example passages">
+          <span class="examples-label">TRY A PASSAGE</span>
+          <button type="button" class="example-chip" data-reference="John 3:16">John 3:16</button>
+          <button type="button" class="example-chip" data-reference="Psalm 23">Psalm 23</button>
+          <button type="button" class="example-chip" data-reference="Romans 8:28-30">Romans 8:28-30</button>
+        </div>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section id="readings" class="readings" aria-label="Bible readings" hidden>
+        <div class="readings-heading">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> YOUR READING</div>
+            <h2>Take your time.</h2>
+          </div>
+          <div class="reading-actions">
+            <button id="copy-button" class="text-button" type="button">Copy reading</button>
+            <button id="print-button" class="text-button" type="button">Print</button>
+          </div>
+        </div>
+        <div id="reading-list" class="reading-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Made for unhurried reading.</span>
+      <span>Passage text via <a href="https://bible-api.com" target="_blank" rel="noreferrer">Bible API</a> · Public-domain translations</span>
+    </footer>
+  </body>
+</html>
