@@ -85,6 +85,32 @@ main,
   font-style: italic;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.connection-status {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.connection-status[data-online="false"] {
+  color: var(--gold);
+}
+
+.install-button {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--white);
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 600;
+}
+
 main {
   padding-block: 78px 92px;
 }
@@ -430,7 +456,15 @@ h2 {
   }
 
   .header-note {
-    font-size: 13px;
+    display: none;
+  }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  .connection-status {
+    font-size: 9px;
   }
 
   main {

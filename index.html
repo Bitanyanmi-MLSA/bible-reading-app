@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f6f3eb">
     <meta name="description" content="Turn Bible references into complete, readable passages.">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <title>Reading Room — Scripture, in full</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
   </head>
@@ -19,6 +18,10 @@
         <span>READING ROOM</span>
       </a>
       <span class="header-note">A quiet place for the Word</span>
+      <div class="header-actions">
+        <span id="connection-status" class="connection-status" role="status">Preparing offline reading…</span>
+        <button id="install-button" class="install-button" type="button" hidden>Install app</button>
+      </div>
     </header>
 
     <main>
@@ -37,7 +40,7 @@
             <label class="translation-picker" for="translation">
               <span>TRANSLATION</span>
               <select id="translation" name="translation">
-                <option value="web">World English Bible</option>
+                <option value="web">World English Bible · offline</option>
                 <option value="kjv">King James Version</option>
               </select>
             </label>
@@ -75,7 +78,7 @@
 
     <footer class="site-footer">
       <span>Made for unhurried reading.</span>
-      <span>Passage text via <a href="https://bible-api.com" target="_blank" rel="noreferrer">Bible API</a> · Public-domain translations</span>
+      <span>Offline WEB text: <a href="https://ebible.org/web/" target="_blank" rel="noreferrer">eBible.org</a> · KJV online via <a href="https://bible-api.com" target="_blank" rel="noreferrer">Bible API</a></span>
     </footer>
   </body>
 </html>
